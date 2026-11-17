@@ -38,6 +38,36 @@ html[data-theme="light"] .type-cal{color:#1f5a8a}
 html[data-theme="light"] .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.12);border-color:#c9bda6}
 html[data-theme="light"] .btn-gold{color:#4a2c00}
 
+
+/* ---------- Игры ---------- */
+.game-badges{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.game-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.gb-shooter{background:rgba(224,85,69,.15);color:var(--red)}
+.gb-moba{background:rgba(76,175,109,.15);color:var(--green)}
+.gb-br{background:rgba(74,157,224,.15);color:var(--blue)}
+.gb-mmo{background:rgba(255,170,0,.15);color:var(--accent)}
+.gb-action{background:rgba(154,85,224,.18);color:#b07df0}
+html[data-theme="light"] .gb-action{color:#7a3fc0}
+html[data-theme="light"] .gb-shooter{color:#b03a2c}
+html[data-theme="light"] .gb-moba{color:#20703e}
+html[data-theme="light"] .gb-br{color:#1f5a8a}
+html[data-theme="light"] .gb-mmo{color:#9a6600}
+
+/* ---------- Форма заявки ---------- */
+.reg-form{max-width:640px;margin:26px auto 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px}
+.reg-form h3{color:var(--accent);font-size:20px;margin-bottom:6px;font-family:'Russo One',sans-serif}
+.reg-form .form-sub{color:var(--muted);font-size:14px;margin-bottom:20px}
+.reg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.reg-field{margin-bottom:14px}
+.reg-field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
+.reg-field input,.reg-field select,.reg-field textarea{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:11px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color .2s}
+.reg-field input:focus,.reg-field select:focus,.reg-field textarea:focus{border-color:var(--accent)}
+.reg-field textarea{resize:vertical;min-height:70px}
+.reg-actions{display:flex;gap:12px;flex-wrap:wrap}
+.reg-note{font-size:12px;color:var(--muted);margin-top:14px}
+.copied{color:var(--green);font-size:13px;margin-left:4px;display:none}
+@media(max-width:560px){.reg-row{grid-template-columns:1fr}}
+
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.65}
@@ -167,17 +197,6 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 .counters{margin-top:10px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:center;font-size:13px;color:var(--muted)}
 .counters img{height:26px;vertical-align:middle;border-radius:4px}
 .data-note{margin-top:-16px;margin-bottom:22px;font-size:13px;font-style:italic;color:var(--muted)}
-
-/* Игры альянса */
-.game-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.game-card h3{margin-bottom:8px}
-.game-card p{color:var(--muted)}
-.game-badge{display:inline-block;margin-top:18px;padding:5px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.5px}
-.gb-red{background:rgba(255,68,68,.12);color:#ff6b6b;border:1px solid rgba(255,68,68,.4)}
-.gb-green{background:rgba(80,200,120,.12);color:#5dd39e;border:1px solid rgba(80,200,120,.4)}
-.gb-blue{background:rgba(80,160,255,.12);color:#6fa8ff;border:1px solid rgba(80,160,255,.4)}
-.gb-gold{background:rgba(255,170,0,.12);color:var(--accent);border:1px solid rgba(255,170,0,.4)}
-.gb-purple{background:rgba(170,120,255,.12);color:#a97bff;border:1px solid rgba(170,120,255,.4)}
 </style>
 </head>
 <body>
@@ -332,32 +351,32 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 <section id="games">
   <div class="container">
     <h2>Игры, в которые мы играем</h2>
-    <p class="section-sub">Вне Doomsday альянс не сидит без дела — вот во что играем вместе, когда ждём ближайший ивент.</p>
-    <div class="game-grid">
-      <div class="card game-card">
+    <p class="section-sub">Альянс живёт не только в Думсдее — между ивентами рубимся и в другие игры.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="game-badges"><span class="game-badge gb-shooter">шутер</span></div>
         <h3>Counter-Strike</h3>
-        <p>Классика жанра — тактический шутер. Разминка перед ивентами и главное: не отдавать бомбу.</p>
-        <span class="game-badge gb-red">шутер</span>
+        <p>Классика для разогрева перед ивентами. Пять минут — и уже стрельба.</p>
       </div>
-      <div class="card game-card">
+      <div class="card">
+        <div class="game-badges"><span class="game-badge gb-moba">MOBA</span></div>
         <h3>Dota 2</h3>
-        <p>MOBA на вечер. Пять человек в пати — как отряд на осаде, только с крилом и мидасом.</p>
-        <span class="game-badge gb-green">MOBA</span>
+        <p>Когда нужен тактический перерыв между оборонами.</p>
       </div>
-      <div class="card game-card">
+      <div class="card">
+        <div class="game-badges"><span class="game-badge gb-br">батл-рояль</span></div>
         <h3>PUBG</h3>
-        <p>Батл-рояль: высадка, лут, финальный круг. Кто выжил — тот сегодня лучше всех собрал ресурсы.</p>
-        <span class="game-badge gb-blue">батл-рояль</span>
+        <p>Последний круг — и снова за штурм Помпей.</p>
       </div>
-      <div class="card game-card">
+      <div class="card">
+        <div class="game-badges"><span class="game-badge gb-mmo">MMORPG</span></div>
         <h3>RF Online</h3>
-        <p>MMORPG с расовыми войнами. Знакомая территория: фракции, осады и всё за ресурсный контроль.</p>
-        <span class="game-badge gb-gold">MMORPG</span>
+        <p>Там, где всё началось — фракции, войны и рейды.</p>
       </div>
-      <div class="card game-card">
+      <div class="card">
+        <div class="game-badges"><span class="game-badge gb-action">экшен / кооп</span></div>
         <h3>Warhammer 40,000: Space Marine 2</h3>
-        <p>Экшен во вселенной WH40K: орки, ксеносы и цепной меч. Кооп-кампания и PvE-операции — идеальный отрядный отдых.</p>
-        <span class="game-badge gb-purple">экшен / кооп</span>
+        <p>Кооп-кампания и PvE-операции — идеальный отрядный отдых.</p>
       </div>
     </div>
   </div>
@@ -463,7 +482,52 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
       <p>Пишите ЛС лидеру JesusGuard — ID 1591060824 или Telegram @JesFYfs</p>
       <a class="btn btn-gold" href="https://telemost.yandex.ru/join#57981bf9-1dd6-4733-91f8-1e06ac29f222" target="_blank">Написать лидеру</a>
     </div>
-  </div>
+      <div class="reg-form" id="reg-form">
+        <h3>Заявка в альянс</h3>
+        <p class="form-sub">Заполни форму — заявка автоматически соберётся в сообщение лидеру. Останется только нажать «Отправить».</p>
+        <form id="joinForm" onsubmit="return submitJoin(event)">
+          <div class="reg-row">
+            <div class="reg-field">
+              <label for="f-nick">Ник в игре *</label>
+              <input type="text" id="f-nick" required placeholder="Например: JesusGuard">
+            </div>
+            <div class="reg-field">
+              <label for="f-id">ID в игре *</label>
+              <input type="text" id="f-id" required placeholder="Например: 1591060824">
+            </div>
+          </div>
+          <div class="reg-row">
+            <div class="reg-field">
+              <label for="f-type">Тип войск *</label>
+              <select id="f-type" required>
+                <option value="" disabled selected>Выбери тип</option>
+                <option value="Пехота">Пехота</option>
+                <option value="Стрелки">Стрелки</option>
+                <option value="Всадники">Всадники</option>
+              </select>
+            </div>
+            <div class="reg-field">
+              <label for="f-power">Мощность героя *</label>
+              <input type="text" id="f-power" required placeholder="Например: 5.4M">
+            </div>
+          </div>
+          <div class="reg-field">
+            <label for="f-contact">Telegram или другой контакт *</label>
+            <input type="text" id="f-contact" required placeholder="Например: @nickname">
+          </div>
+          <div class="reg-field">
+            <label for="f-note">Комментарий (необязательно)</label>
+            <textarea id="f-note" placeholder="Сколько играешь, какие ивенты ходаешь, готов ли к голосовой связи..."></textarea>
+          </div>
+          <div class="reg-actions">
+            <button type="submit" class="btn btn-gold">Отправить заявку</button>
+            <button type="button" class="btn btn-ghost" onclick="copyJoin()">Скопировать текст</button>
+            <span class="copied" id="copiedMsg">Текст заявки скопирован ✓</span>
+          </div>
+        </form>
+        <p class="reg-note">Откроется Telegram с готовым сообщением — просто нажми «отправить». Если Telegram не открылся, используй «Скопировать текст».</p>
+      </div>
+</div>
 </section>
 
 <footer>
@@ -477,6 +541,41 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 </footer>
 
 <script>
+// Заявка в альянс
+function collectJoin(){
+  const g = id => document.getElementById(id).value.trim();
+  return "Заявка в [FyFS] YoungForeverS (регион 868)\n" +
+    "Ник в игре: " + g('f-nick') + "\n" +
+    "ID в игре: " + g('f-id') + "\n" +
+    "Тип войск: " + g('f-type') + "\n" +
+    "Мощность героя: " + g('f-power') + "\n" +
+    "Контакт: " + g('f-contact') +
+    (g('f-note') ? "\nКомментарий: " + g('f-note') : "");
+}
+function submitJoin(e){
+  e.preventDefault();
+  const msg = collectJoin();
+  window.open("https://t.me/JesFYfs?text=" + encodeURIComponent(msg), "_blank");
+  return false;
+}
+function copyJoin(){
+  const msg = collectJoin();
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(msg).then(() => {
+      const m = document.getElementById('copiedMsg');
+      m.style.display = 'inline';
+      setTimeout(() => m.style.display = 'none', 2500);
+    });
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = msg; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    const m = document.getElementById('copiedMsg');
+    m.style.display = 'inline';
+    setTimeout(() => m.style.display = 'none', 2500);
+  }
+}
+
 // Случайная цитата
 const quotes = [
   "В пустоши выживает не самый сильный — а тот, кто не бросает своих.",
