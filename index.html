@@ -38,36 +38,6 @@ html[data-theme="light"] .type-cal{color:#1f5a8a}
 html[data-theme="light"] .card:hover{box-shadow:0 10px 30px rgba(0,0,0,.12);border-color:#c9bda6}
 html[data-theme="light"] .btn-gold{color:#4a2c00}
 
-
-/* ---------- Игры ---------- */
-.game-badges{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
-.game-badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
-.gb-shooter{background:rgba(224,85,69,.15);color:var(--red)}
-.gb-moba{background:rgba(76,175,109,.15);color:var(--green)}
-.gb-br{background:rgba(74,157,224,.15);color:var(--blue)}
-.gb-mmo{background:rgba(255,170,0,.15);color:var(--accent)}
-.gb-action{background:rgba(154,85,224,.18);color:#b07df0}
-html[data-theme="light"] .gb-action{color:#7a3fc0}
-html[data-theme="light"] .gb-shooter{color:#b03a2c}
-html[data-theme="light"] .gb-moba{color:#20703e}
-html[data-theme="light"] .gb-br{color:#1f5a8a}
-html[data-theme="light"] .gb-mmo{color:#9a6600}
-
-/* ---------- Форма заявки ---------- */
-.reg-form{max-width:640px;margin:26px auto 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px}
-.reg-form h3{color:var(--accent);font-size:20px;margin-bottom:6px;font-family:'Russo One',sans-serif}
-.reg-form .form-sub{color:var(--muted);font-size:14px;margin-bottom:20px}
-.reg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.reg-field{margin-bottom:14px}
-.reg-field label{display:block;font-size:13px;font-weight:600;color:var(--muted);margin-bottom:6px}
-.reg-field input,.reg-field select,.reg-field textarea{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:11px 14px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color .2s}
-.reg-field input:focus,.reg-field select:focus,.reg-field textarea:focus{border-color:var(--accent)}
-.reg-field textarea{resize:vertical;min-height:70px}
-.reg-actions{display:flex;gap:12px;flex-wrap:wrap}
-.reg-note{font-size:12px;color:var(--muted);margin-top:14px}
-.copied{color:var(--green);font-size:13px;margin-left:4px;display:none}
-@media(max-width:560px){.reg-row{grid-template-columns:1fr}}
-
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.65}
@@ -197,6 +167,74 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 .counters{margin-top:10px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;justify-content:center;font-size:13px;color:var(--muted)}
 .counters img{height:26px;vertical-align:middle;border-radius:4px}
 .data-note{margin-top:-16px;margin-bottom:22px;font-size:13px;font-style:italic;color:var(--muted)}
+
+/* === Дополнения === */
+.header-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+
+/* Игры */
+.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.game-card{text-align:center}
+.game-card h3{margin:10px 0 6px}
+.game-icon{font-size:34px;line-height:1}
+.game-badge{display:inline-block;margin-bottom:10px;padding:4px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.4px}
+.gb-red{background:rgba(255,68,68,.14);color:#ff6b6b;border:1px solid rgba(255,68,68,.45)}
+.gb-green{background:rgba(76,175,80,.14);color:#6fd377;border:1px solid rgba(76,175,80,.45)}
+.gb-blue{background:rgba(64,150,255,.14);color:#6faaff;border:1px solid rgba(64,150,255,.45)}
+.gb-gold{background:rgba(255,170,0,.14);color:var(--accent);border:1px solid var(--accent)}
+.gb-purple{background:rgba(170,110,255,.14);color:#b18aff;border:1px solid rgba(170,110,255,.45)}
+.game-card p{font-size:14px;color:var(--muted)}
+
+/* Зал славы: подиум */
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px;align-items:end}
+.pod-card{text-align:center;padding:22px 12px}
+.pod-card .medal{font-size:34px}
+.pod-name{font-weight:700;font-size:17px;margin-top:6px}
+.pod-kills{color:var(--muted);font-size:13px;margin-top:4px}
+.pod-1{border-color:var(--accent);box-shadow:0 0 26px rgba(255,170,0,.22);transform:translateY(-6px)}
+.pod-1 .pod-name{color:var(--accent);font-size:19px}
+@media(max-width:700px){.podium{grid-template-columns:1fr}.pod-1{transform:none;order:-1}}
+
+/* Состав: ранги и сводка */
+.rank-gold{box-shadow:inset 3px 0 0 var(--accent)}
+.rank-chip{display:inline-block;padding:3px 10px;border-radius:999px;background:rgba(255,170,0,.12);border:1px solid var(--accent);color:var(--accent);font-weight:700;font-size:12px}
+.sostav-summary{margin-bottom:14px;padding:10px 16px;border:1px dashed var(--line);border-radius:10px;font-size:14px;color:var(--muted)}
+.sostav-summary b{color:var(--accent)}
+
+/* Типографика */
+.card p{max-width:65ch}
+.hof-note,.section-sub,.data-note{max-width:72ch}
+#events,#join{padding-block-start:96px}
+
+/* Форма заявки */
+.join-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:20px 0 6px;text-align:left}
+.join-form input,.join-form select,.join-form textarea{width:100%;padding:11px 14px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--text);font:inherit;font-size:14px;box-sizing:border-box}
+.join-form input::placeholder,.join-form textarea::placeholder{color:var(--muted)}
+.join-form .full{grid-column:1/-1;resize:vertical}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+
+/* Аватар лидера: вращающееся золотое кольцо при наведении */
+.leader-photo{position:relative;border-radius:50%}
+.leader-photo::after{content:'';position:absolute;inset:-7px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0deg,#ffaa00 60deg,transparent 130deg);opacity:0;transition:opacity .35s;animation:ringSpin 3.2s linear infinite;pointer-events:none}
+.leader-card:hover .leader-photo::after{opacity:1}
+@keyframes ringSpin{to{transform:rotate(360deg)}}
+
+/* Анимации появления */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+[data-reveal].revealed{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
+
+/* Скроллбар в цветах сайта */
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:#13131a}
+::-webkit-scrollbar-thumb{background:linear-gradient(#ffaa00,#ff7a1a);border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:#ffc033}
+
+/* Мобильное меню: лента со свайпом */
+@media(max-width:760px){
+  .nav-inner{overflow-x:auto;white-space:nowrap;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .nav-inner::-webkit-scrollbar{display:none}
+}
+.nav-link.active{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -209,8 +247,8 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
     <a class="nav-link" href="#rules">Правила</a>
     <a class="nav-link" href="#events">События</a>
     <a class="nav-link" href="#leader">Лидер</a>
-    <a class="nav-link" href="#svyaz">Связь</a>
     <a class="nav-link" href="#games">Игры</a>
+    <a class="nav-link" href="#svyaz">Связь</a>
     <a class="nav-link" href="#sostav">Состав</a>
     <a class="nav-link" href="#siege">Осада и гарнизон</a>
     <a class="nav-link" href="#join">Вступить</a>
@@ -226,6 +264,10 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
     <h1>YoungForeverS</h1>
     <div class="header-sub">Боевой альянс региона 868</div>
     <div class="region-badge">Регион 868</div>
+    <div class="header-cta">
+      <a class="btn btn-gold" href="#join">Вступить в альянс</a>
+      <a class="btn btn-ghost" href="https://live.vkvideo.ru/jesusdoomsday" target="_blank">Смотреть стрим</a>
+    </div>
     <br>
     <div class="quote" id="quote"></div>
   </div>
@@ -243,6 +285,11 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
         <h3>Набор открыт</h3>
         <p>Доберу в альянс ребят с т5-т6 на боевые ивенты с возможностью пользоваться голосовой связью.</p>
         <p style="margin-top:8px;font-weight:700;color:var(--accent)">Пишите ЛС!</p>
+      </div>
+      <div class="card">
+        <h3>Мы в строю</h3>
+        <p>Альянс создан <b id="ageDigits">—</b></p>
+        <p class="muted" style="font-size:13px">Основан 9 июля 2025 года · растём каждый день</p>
       </div>
     </div>
   </div>
@@ -294,12 +341,14 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
   <div class="container">
     <h2>Зал славы</h2>
     <p class="hof-note">Топ-10 бойцов альянса по общим убийствам. Каждая цифра здесь — сотни разорванных орд и чужих амбиций.</p>
+    <div class="podium">
+      <div class="card pod-card pod-2"><div class="medal">🥈</div><div class="pod-name">ЛюDоED</div><div class="pod-kills">1.8B убийств</div></div>
+      <div class="card pod-card pod-1"><div class="medal">🥇</div><div class="pod-name">Whiskey✯</div><div class="pod-kills">2.9B убийств</div></div>
+      <div class="card pod-card pod-3"><div class="medal">🥉</div><div class="pod-name">absent_</div><div class="pod-kills">1.6B убийств</div></div>
+    </div>
     <div class="table-wrap">
     <table class="hof-table">
       <tr><th>#</th><th>Боец</th><th>Убийства (всего)</th></tr>
-      <tr class="hof-top"><td>🥇</td><td>Whiskey✯</td><td class="kills-val">2.9B</td></tr>
-      <tr class="hof-top"><td>🥈</td><td>ЛюDоED</td><td class="kills-val">1.8B</td></tr>
-      <tr class="hof-top"><td>🥉</td><td>absent_</td><td class="kills-val">1.6B</td></tr>
       <tr><td>4</td><td>РезЩик</td><td class="kills-val">303.3M</td></tr>
       <tr><td>5</td><td>Алекс0121</td><td class="kills-val">287.9M</td></tr>
       <tr><td>6</td><td>ФрезА</td><td class="kills-val">265.2M</td></tr>
@@ -330,6 +379,20 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
   </div>
 </section>
 
+<section id="games">
+  <div class="container">
+    <h2>Игры, в которые мы играем</h2>
+    <p class="section-sub">Думсдей — основная, но не единственная. В свободное время альянс не разжижается:</p>
+    <div class="games-grid">
+      <div class="card game-card"><div class="game-icon">🎯</div><h3>Counter-Strike</h3><span class="game-badge gb-red">шутер</span><p>Разминка перед ивентами — точность, реакция и командный огонь.</p></div>
+      <div class="card game-card"><div class="game-icon">⚔️</div><h3>Dota 2</h3><span class="game-badge gb-green">MOBA</span><p>Пять героев, одна цель. Тактика и микроконтроль.</p></div>
+      <div class="card game-card"><div class="game-icon">🪖</div><h3>PUBG</h3><span class="game-badge gb-blue">батл-рояль</span><p>Выживание, тактика и точный выстрел в финальном круге.</p></div>
+      <div class="card game-card"><div class="game-icon">🛡️</div><h3>RF Online</h3><span class="game-badge gb-gold">MMORPG</span><p>Классика жанра, где альянс держит фронт на всех фронтах.</p></div>
+      <div class="card game-card"><div class="game-icon">🔨</div><h3>Warhammer 40,000: Space Marine 2</h3><span class="game-badge gb-purple">экшен / кооп</span><p>Кооп-кампания и PvE-операции — идеальный отрядный отдых.</p></div>
+    </div>
+  </div>
+</section>
+
 <section id="svyaz">
   <div class="container">
     <h2>Связь</h2>
@@ -348,45 +411,12 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
   </div>
 </section>
 
-<section id="games">
-  <div class="container">
-    <h2>Игры, в которые мы играем</h2>
-    <p class="section-sub">Альянс живёт не только в Думсдее — между ивентами рубимся и в другие игры.</p>
-    <div class="cards">
-      <div class="card">
-        <div class="game-badges"><span class="game-badge gb-shooter">шутер</span></div>
-        <h3>Counter-Strike</h3>
-        <p>Классика для разогрева перед ивентами. Пять минут — и уже стрельба.</p>
-      </div>
-      <div class="card">
-        <div class="game-badges"><span class="game-badge gb-moba">MOBA</span></div>
-        <h3>Dota 2</h3>
-        <p>Когда нужен тактический перерыв между оборонами.</p>
-      </div>
-      <div class="card">
-        <div class="game-badges"><span class="game-badge gb-br">батл-рояль</span></div>
-        <h3>PUBG</h3>
-        <p>Последний круг — и снова за штурм Помпей.</p>
-      </div>
-      <div class="card">
-        <div class="game-badges"><span class="game-badge gb-mmo">MMORPG</span></div>
-        <h3>RF Online</h3>
-        <p>Там, где всё началось — фракции, войны и рейды.</p>
-      </div>
-      <div class="card">
-        <div class="game-badges"><span class="game-badge gb-action">экшен / кооп</span></div>
-        <h3>Warhammer 40,000: Space Marine 2</h3>
-        <p>Кооп-кампания и PvE-операции — идеальный отрядный отдых.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="sostav">
   <div class="container">
     <h2>Состав на боевые ивенты</h2>
     <p class="section-sub">Игроки с прокачанными героями и зверями — основной состав на боевые ивенты. Отсортировано по мощности героя.</p>
     <p class="data-note">📅 Мощность героев и зверей актуальна на ноябрь 2026 года</p>
+    <div class="sostav-summary" id="sostavSummary"></div>
     <div class="table-wrap">
     <table class="sostav-table">
       <tr><th>Ник</th><th>Ранг</th><th>Тип</th><th>Герой</th><th>Зверь</th></tr>
@@ -479,55 +509,27 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
         <span class="req-chip">Боевые ивенты</span>
         <span class="req-chip">Голосовая связь</span>
       </div>
+      <div class="join-form">
+        <input id="af-nick" type="text" placeholder="Ник в игре" maxlength="30">
+        <input id="af-id" type="text" inputmode="numeric" placeholder="ID в игре" maxlength="15">
+        <select id="af-type">
+          <option value="" disabled selected>Тип войск</option>
+          <option>пехота</option>
+          <option>стрелок</option>
+          <option>всадник</option>
+        </select>
+        <input id="af-power" type="text" inputmode="numeric" placeholder="Мощность героя" maxlength="15">
+        <input id="af-contact" type="text" placeholder="Telegram или ник для связи" maxlength="40">
+        <textarea id="af-comment" class="full" rows="3" placeholder="Комментарий (необязательно)" maxlength="300"></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn btn-gold" id="applyBtn">Отправить заявку</button>
+        <button type="button" class="btn btn-ghost" id="copyBtn">Скопировать текст</button>
+      </div>
       <p>Пишите ЛС лидеру JesusGuard — ID 1591060824 или Telegram @JesFYfs</p>
       <a class="btn btn-gold" href="https://telemost.yandex.ru/join#57981bf9-1dd6-4733-91f8-1e06ac29f222" target="_blank">Написать лидеру</a>
     </div>
-      <div class="reg-form" id="reg-form">
-        <h3>Заявка в альянс</h3>
-        <p class="form-sub">Заполни форму — заявка автоматически соберётся в сообщение лидеру. Останется только нажать «Отправить».</p>
-        <form id="joinForm" onsubmit="return submitJoin(event)">
-          <div class="reg-row">
-            <div class="reg-field">
-              <label for="f-nick">Ник в игре *</label>
-              <input type="text" id="f-nick" required placeholder="Например: JesusGuard">
-            </div>
-            <div class="reg-field">
-              <label for="f-id">ID в игре *</label>
-              <input type="text" id="f-id" required placeholder="Например: 1591060824">
-            </div>
-          </div>
-          <div class="reg-row">
-            <div class="reg-field">
-              <label for="f-type">Тип войск *</label>
-              <select id="f-type" required>
-                <option value="" disabled selected>Выбери тип</option>
-                <option value="Пехота">Пехота</option>
-                <option value="Стрелки">Стрелки</option>
-                <option value="Всадники">Всадники</option>
-              </select>
-            </div>
-            <div class="reg-field">
-              <label for="f-power">Мощность героя *</label>
-              <input type="text" id="f-power" required placeholder="Например: 5.4M">
-            </div>
-          </div>
-          <div class="reg-field">
-            <label for="f-contact">Telegram или другой контакт *</label>
-            <input type="text" id="f-contact" required placeholder="Например: @nickname">
-          </div>
-          <div class="reg-field">
-            <label for="f-note">Комментарий (необязательно)</label>
-            <textarea id="f-note" placeholder="Сколько играешь, какие ивенты ходаешь, готов ли к голосовой связи..."></textarea>
-          </div>
-          <div class="reg-actions">
-            <button type="submit" class="btn btn-gold">Отправить заявку</button>
-            <button type="button" class="btn btn-ghost" onclick="copyJoin()">Скопировать текст</button>
-            <span class="copied" id="copiedMsg">Текст заявки скопирован ✓</span>
-          </div>
-        </form>
-        <p class="reg-note">Откроется Telegram с готовым сообщением — просто нажми «отправить». Если Telegram не открылся, используй «Скопировать текст».</p>
-      </div>
-</div>
+  </div>
 </section>
 
 <footer>
@@ -541,41 +543,6 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 </footer>
 
 <script>
-// Заявка в альянс
-function collectJoin(){
-  const g = id => document.getElementById(id).value.trim();
-  return "Заявка в [FyFS] YoungForeverS (регион 868)\n" +
-    "Ник в игре: " + g('f-nick') + "\n" +
-    "ID в игре: " + g('f-id') + "\n" +
-    "Тип войск: " + g('f-type') + "\n" +
-    "Мощность героя: " + g('f-power') + "\n" +
-    "Контакт: " + g('f-contact') +
-    (g('f-note') ? "\nКомментарий: " + g('f-note') : "");
-}
-function submitJoin(e){
-  e.preventDefault();
-  const msg = collectJoin();
-  window.open("https://t.me/JesFYfs?text=" + encodeURIComponent(msg), "_blank");
-  return false;
-}
-function copyJoin(){
-  const msg = collectJoin();
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(msg).then(() => {
-      const m = document.getElementById('copiedMsg');
-      m.style.display = 'inline';
-      setTimeout(() => m.style.display = 'none', 2500);
-    });
-  } else {
-    const ta = document.createElement('textarea');
-    ta.value = msg; document.body.appendChild(ta); ta.select();
-    document.execCommand('copy'); document.body.removeChild(ta);
-    const m = document.getElementById('copiedMsg');
-    m.style.display = 'inline';
-    setTimeout(() => m.style.display = 'none', 2500);
-  }
-}
-
 // Случайная цитата
 const quotes = [
   "В пустоши выживает не самый сильный — а тот, кто не бросает своих.",
@@ -661,6 +628,114 @@ let visits = parseInt(localStorage.getItem('visits') || '0', 10) + 1;
 localStorage.setItem('visits', String(visits));
 function plural(n){ return (n % 10 === 1 && n % 100 !== 11) ? 'раз' : 'раза'; }
 document.getElementById('visitCount').textContent = '🔥 Вы открыли этот сайт ' + visits + ' ' + plural(visits);
+
+// === Счётчик возраста альянса ===
+const allianceCreated = new Date(Date.UTC(2025, 6, 9, 0, 0, 0)); // 9 июля 2025, 03:00 МСК
+function pluralRu(n, one, few, many){
+  const m = n % 10, f = n % 100;
+  if (m === 1 && f !== 11) return one;
+  if (m >= 2 && m <= 4 && (f < 10 || f >= 20)) return few;
+  return many;
+}
+function updateAge(){
+  let diff = Date.now() - allianceCreated.getTime();
+  if (diff < 0) diff = 0;
+  const d = Math.floor(diff / 864e5);
+  const h = Math.floor((diff % 864e5) / 36e5);
+  document.getElementById('ageDigits').textContent =
+    d + ' ' + pluralRu(d, 'день', 'дня', 'дней') + ' ' +
+    h + ' ' + pluralRu(h, 'час', 'часа', 'часов') + ' назад';
+}
+updateAge();
+setInterval(updateAge, 30000);
+
+// === Состав: золотые ранги R4/R5 и мини-сводка ===
+document.querySelectorAll('.sostav-table tr').forEach(tr => {
+  const rankCell = tr.cells && tr.cells[1];
+  if (!rankCell) return;
+  const r = rankCell.textContent.trim();
+  if (/^R[45]$/.test(r)) {
+    tr.classList.add('rank-gold');
+    rankCell.innerHTML = '<span class="rank-chip">' + r + '</span>';
+  }
+});
+(function(){
+  const counts = {};
+  document.querySelectorAll('.sostav-table .type-badge').forEach(b => {
+    const t = b.textContent.trim();
+    counts[t] = (counts[t] || 0) + 1;
+  });
+  const el = document.getElementById('sostavSummary');
+  if (el) el.innerHTML = 'В составе: <b>' + (counts['пехота'] || 0) + '</b> пехоты · <b>' +
+    (counts['стрелок'] || 0) + '</b> стрелков · <b>' + (counts['всадник'] || 0) + '</b> всадников';
+})();
+
+// === Форма заявки ===
+function buildApplication(){
+  const nick = document.getElementById('af-nick').value.trim();
+  const gid = document.getElementById('af-id').value.trim();
+  const type = document.getElementById('af-type').value;
+  const power = document.getElementById('af-power').value.trim();
+  const contact = document.getElementById('af-contact').value.trim();
+  const comment = document.getElementById('af-comment').value.trim();
+  if (!nick || !gid || !contact) {
+    alert('Заполни ник, ID и контакт — без них заявку не разобрать.');
+    return null;
+  }
+  return 'Заявка в альянс [FyFS] YoungForeverS (регион 868):\n' +
+    'Ник: ' + nick + '\nID в игре: ' + gid + '\n' +
+    (type ? 'Тип войск: ' + type + '\n' : '') +
+    (power ? 'Мощность героя: ' + power + '\n' : '') +
+    'Контакт: ' + contact + '\n' +
+    (comment ? 'Комментарий: ' + comment : '');
+}
+document.getElementById('applyBtn').addEventListener('click', function(){
+  const text = buildApplication();
+  if (!text) return;
+  window.open('https://t.me/JesFYfs?text=' + encodeURIComponent(text), '_blank');
+});
+document.getElementById('copyBtn').addEventListener('click', function(){
+  const text = buildApplication();
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(() => {
+    this.textContent = 'Скопировано ✓';
+    setTimeout(() => { this.textContent = 'Скопировать текст'; }, 2000);
+  });
+});
+
+// === Анимации появления при прокрутке ===
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const targets = document.querySelectorAll('section > .container > *');
+  targets.forEach((el, i) => {
+    el.setAttribute('data-reveal', '');
+    el.style.transitionDelay = (i % 6) * 70 + 'ms';
+  });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('revealed'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  targets.forEach(el => io.observe(el));
+})();
+
+// === Подсветка активного раздела в меню (scroll-spy) ===
+(function(){
+  const links = Array.from(document.querySelectorAll('.nav-link'));
+  const map = {};
+  links.forEach(l => { const id = (l.getAttribute('href') || '').slice(1); if (id) map[id] = l; });
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      const link = map[e.target.id];
+      if (!link) return;
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  Object.keys(map).forEach(id => { const s = document.getElementById(id); if (s) io.observe(s); });
+})();
 </script>
 </body>
 </html>
