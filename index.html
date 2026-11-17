@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>[FyFS] YoungForeverS — Альянс 868 | Doomsday: Last Survivors</title>
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23ffaa00'/><stop offset='1' stop-color='%23ff7a1a'/></linearGradient></defs><path d='M32 3 57 12v21c0 15-10 24-25 28C17 57 7 48 7 33V12z' fill='url(%23g)'/><path d='M32 16c7 8 12 13 12 21a12 12 0 0 1-24 0c0-8 5-13 12-21z' fill='%23161006'/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -134,6 +136,24 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
   .leader-card{justify-content:center;text-align:center}
   .leader-info{text-align:center}
 }
+
+/* Светлая тема */
+html[data-theme="light"]{--bg:#f3efe6;--bg2:#faf7f0;--card:#ffffff;--line:#e2dbcb;--text:#332a1e;--muted:#7c7263;--green:#2e8b52;--red:#c43c2e;--blue:#2f7fc0}
+html[data-theme="light"] header{background:linear-gradient(180deg,#fbf3e0 0%,#f3efe6 100%)}
+html[data-theme="light"] nav{background:rgba(250,247,240,.88)}
+html[data-theme="light"] header h1{background:linear-gradient(120deg,#8a5200,#c97500 45%,#e05500);-webkit-background-clip:text;background-clip:text}
+html[data-theme="light"] section h2{color:var(--text)}
+html[data-theme="light"] .timer-digits{color:var(--text)}
+html[data-theme="light"] .hof-table th{background:#ece5d5}
+html[data-theme="light"] .sostav-table th{background:#ece5d5}
+html[data-theme="light"] .hof-top td{color:#a3690a}
+html[data-theme="light"] .type-inf,html[data-theme="light"] .slot-siege .slot-tag{color:#c03a2e}
+html[data-theme="light"] .type-arc,html[data-theme="light"] .type-cal,html[data-theme="light"] .slot-garn .slot-tag{color:#256e42}
+html[data-theme="light"] .type-cal{color:#2f7fc0}
+html[data-theme="light"] .quote{background:rgba(255,255,255,.78)}
+.theme-btn{width:38px;height:38px;border-radius:10px;background:var(--card);border:1px solid var(--line);color:var(--accent);font-size:17px;cursor:pointer;transition:transform .15s,border-color .15s;flex-shrink:0;line-height:1}
+.theme-btn:hover{transform:rotate(15deg);border-color:var(--accent)}
+.visit-note{margin-top:8px;font-size:12px;opacity:.75}
 </style>
 </head>
 <body>
@@ -150,6 +170,7 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
     <a class="nav-link" href="#sostav">Состав</a>
     <a class="nav-link" href="#siege">Осада и гарнизон</a>
     <a class="nav-link" href="#join">Вступить</a>
+    <button id="theme-toggle" class="theme-btn" title="Переключить тему" aria-label="Переключить тему">☀️</button>
   </div>
 </nav>
 
@@ -386,7 +407,9 @@ footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center}
 </section>
 
 <footer>
-  <div class="container">© 2026 [FyFS] YoungForeverS. Регион 868. Doomsday: Last Survivors.</div>
+  <div class="container">© 2026 [FyFS] YoungForeverS. Регион 868. Doomsday: Last Survivors.
+    <div class="visit-note">🔥 Вы открыли этот сайт <b id="visit-count">1</b> раз</div>
+  </div>
 </footer>
 
 <script>
@@ -454,6 +477,34 @@ function updateTimer(){
 }
 updateTimer();
 setInterval(updateTimer, 1000);
+</script>
+
+<script>
+// Переключатель темы
+(function(){
+  var btn = document.getElementById('theme-toggle');
+  function apply(t){
+    document.documentElement.setAttribute('data-theme', t);
+    btn.textContent = (t === 'light') ? '🌙' : '☀️';
+    btn.title = (t === 'light') ? 'Включить тёмную тему' : 'Включить светлую тему';
+  }
+  var theme = localStorage.getItem('fysts-theme');
+  if (theme !== 'light' && theme !== 'dark') theme = 'dark';
+  apply(theme);
+  btn.addEventListener('click', function(){
+    theme = (theme === 'light') ? 'dark' : 'light';
+    localStorage.setItem('fysts-theme', theme);
+    apply(theme);
+  });
+})();
+// Счётчик посещений (личный, по браузеру)
+(function(){
+  var v = parseInt(localStorage.getItem('fysts-visits') || '0', 10) || 0;
+  v++;
+  localStorage.setItem('fysts-visits', String(v));
+  var el = document.getElementById('visit-count');
+  if (el) el.textContent = v.toLocaleString('ru-RU');
+})();
 </script>
 </body>
 </html>
