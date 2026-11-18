@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://romkas203-a11y.github.io/YoungForever/sitemap.xml
